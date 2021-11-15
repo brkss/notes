@@ -5,11 +5,14 @@ import { useDropzone } from "react-dropzone";
 export const Home: React.FC = () => {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
-  const files = acceptedFiles.map((file: any) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
-  ));
+  const files = acceptedFiles.map((file: any) => {
+    console.log("files ++> ", file);
+    return (
+      <li key={file.path}>
+        {file.path} - {file.size} bytes
+      </li>
+    );
+  });
 
   return (
     <section className="container">
