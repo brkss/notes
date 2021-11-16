@@ -1,12 +1,14 @@
 import React from "react";
 import { Box, Heading, Input, Center } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
+import { readFile } from "../utils/parser/utils";
 
 export const Home: React.FC = () => {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
   const files = acceptedFiles.map((file: any) => {
-    console.log("files ++> ", file);
+    //console.log("files ++> ", file);
+    //console.log("file ctn => ", readFile(file));
     return (
       <li key={file.path}>
         {file.path} - {file.size} bytes
