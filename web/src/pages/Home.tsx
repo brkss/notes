@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Heading, Input, Center } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
 import { readFile } from "../utils/parser/utils";
+import { Note } from "../components";
 
 export const Home: React.FC = () => {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
@@ -32,7 +33,7 @@ export const Home: React.FC = () => {
           </Center>
         </section>
       ) : (
-        <Box>{content}</Box>
+        <Note note={content} />
       )}
     </>
   );
