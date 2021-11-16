@@ -5,10 +5,17 @@ import { readFile } from "../utils/parser/utils";
 
 export const Home: React.FC = () => {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+  const [content, SetContent] = React.useState<any>();
 
   const files = acceptedFiles.map((file: any) => {
-    //console.log("files ++> ", file);
-    //console.log("file ctn => ", readFile(file));
+    let reader = new FileReader();
+
+    reader.addEventListener("loadend", function (e) {
+      SetContent(e.target?.result);
+    });
+    reader.readAsBinaryString(file);
+
+    console.log("content -> ", content);
     return (
       <li key={file.path}>
         {file.path} - {file.size} bytes
@@ -18,6 +25,7 @@ export const Home: React.FC = () => {
 
   return (
     <section className="container">
+      <Box>{content}</Box>
       <Center
         bg={"black"}
         height={"100vh"}
