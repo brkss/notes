@@ -1,0 +1,16 @@
+
+
+
+#Component
+-> Heading 
+      #1 -> every heading is starting with '#'
+-> Paragraph
+      #1 -> every normal text without a special tag is a normal paragraph
+-> Lists
+      #1 -> evey list item start with '\t'
+-> Line 
+      #1 -> \\ in emty line indicate a line 
+-> Space 
+      #1 -> \sp in empty line indicate space aka <br />
+-> Highlight
+      #1 -> ???
