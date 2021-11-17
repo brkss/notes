@@ -1,5 +1,6 @@
 import React from "react";
 import { Title, PText } from "../../components";
+import { removeFirstCharInLine } from "./utils";
 
 interface IRule {
   pattren: string;
@@ -30,7 +31,11 @@ export const parser = (note: string) => {
   for (let line of pn) {
     // check if title
     if (line.split("")[0] == "#")
-      components.push({ component: Title, content: line });
+      components.push({
+        component: Title,
+        content: removeFirstCharInLine(line),
+      });
+    else components.push({ component: PText, content: line });
   }
   return components;
 };
