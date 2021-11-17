@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, PText } from "../../components";
+import { Title, PText, Space, Line } from "../../components";
 import { removeFirstCharInLine } from "./utils";
 
 interface IRule {
@@ -34,6 +34,16 @@ export const parser = (note: string) => {
       components.push({
         component: Title,
         content: removeFirstCharInLine(line),
+      });
+    else if (line == "/sp")
+      components.push({
+        content: "",
+        component: Space,
+      });
+    else if (line == "//")
+      components.push({
+        content: "",
+        component: Line,
       });
     else components.push({ component: PText, content: line });
   }

@@ -10,10 +10,10 @@ export const Note: React.FC<Props> = ({ note }) => {
   const [document, SetDocument] = React.useState(parser(note));
 
   return (
-    <>
+    <Box p={"20px"}>
       {document.map((cp, key) => (
         <cp.component key={key} txt={cp.content} />
       ))}
-    </>
+    </Box>
   );
 };
