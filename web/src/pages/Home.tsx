@@ -10,8 +10,9 @@ export const Home: React.FC = () => {
   const files = acceptedFiles.map((file: any) => {
     let reader = new FileReader();
 
-    reader.addEventListener("loadend", function (e) {
+    reader.addEventListener("load", function (e) {
       SetContent(e.target?.result);
+      //console.log(e.target?.result);
     });
     console.log("content => ", content);
     reader.readAsBinaryString(file);

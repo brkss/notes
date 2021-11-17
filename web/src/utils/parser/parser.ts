@@ -1,29 +1,11 @@
 import React from "react";
-import { Title, PText, Space, Line } from "../../components";
+import { Title, PText, Space, Line, LItem } from "../../components";
 import { removeFirstCharInLine, checkForTabs } from "./utils";
-
-interface IRule {
-  pattren: string;
-  component: any;
-}
 
 interface IDoc {
   component: any;
   content: string;
 }
-
-const rules: IRule[] = [
-  // title
-  {
-    pattren: "#",
-    component: Title,
-  },
-  // simple text
-  {
-    pattren: "",
-    component: PText,
-  },
-];
 
 export const parser = (note: string) => {
   const pn = note.split("\n");
@@ -40,8 +22,8 @@ export const parser = (note: string) => {
     // check if list item
     else if (checkForTabs(line))
       components.push({
-        content: "none !",
-        component: PText,
+        content: line,
+        component: LItem,
       });
     // check if space
     else if (line == "/sp")
@@ -58,5 +40,6 @@ export const parser = (note: string) => {
     // check if simple paragraph !
     else components.push({ component: PText, content: line });
   }
+  console.log("final documents ! => ", components);
   return components;
 };
