@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
             {...getRootProps({ className: "dropzone" })}
           >
             <input {...getInputProps()} />
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p>Drag 'n' drop your note here, or click to select manually</p>
           </Center>
         </section>
       ) : (
