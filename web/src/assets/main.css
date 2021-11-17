@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: 'monument-reg';
+  src: local('monument-reg'), url(./fonts/MonumentExtended-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'monument-bld';
+  src: local('monument-bld'), url(./fonts/MonumentExtended-Ultrabold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'helvetica-bld';
+  src: local('monument-bld'), url(./fonts/Helvetica-Bold.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'helvetica';
+  src: local('monument-bld'), url(./fonts/helvetica-light-587ebe5a59211.ttf) format('ttf');
+}
+
+* {
+  font-family: helvetica !important; 
+}
+
+@keyframes bgann {
+  from {background-color: #000054 !important;}
+  to {background-color: #000000 !important;}
+}
+
+.bg-an {
+  background-color: #000000;
+  animation-name: bgann;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}

@@ -7,7 +7,7 @@ interface Props {
 
 export const LItem: React.FC<Props> = ({ txt }) => {
   return (
-    <UnorderedList>
+    <UnorderedList ml={"40px"}>
       <ListItem>{txt}</ListItem>
     </UnorderedList>
   );

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Application } from "./Application";
 import { ChakraProvider } from "@chakra-ui/react";
+import "./assets/main.css";
 
 ReactDOM.render(
   <React.StrictMode>

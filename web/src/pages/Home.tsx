@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
             bg={"black"}
             height={"100vh"}
             color={"white"}
-            {...getRootProps({ className: "dropzone" })}
+            {...getRootProps({ className: "dropzone bg-an" })}
           >
             <input {...getInputProps()} />
             <p>Drag 'n' drop your note here, or click to select manually</p>

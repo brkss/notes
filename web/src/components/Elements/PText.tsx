@@ -6,5 +6,5 @@ interface Props {
 }
 
 export const PText: React.FC<Props> = ({ txt }) => {
-  return <Text> {txt} </Text>;
+  return <Text mt={"5px"}> {txt} </Text>;
 };
