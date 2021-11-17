@@ -7,7 +7,13 @@ interface Props {
 }
 
 export const Note: React.FC<Props> = ({ note }) => {
-  parser(note);
+  const [document, SetDocument] = React.useState(parser(note));
 
-  return <Box>{note}</Box>;
+  return (
+    <>
+      {document.map((cp, key) => (
+        <cp.component key={key} txt={cp.content} />
+      ))}
+    </>
+  );
 };
